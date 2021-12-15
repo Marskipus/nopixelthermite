@@ -1,1 +1,1 @@
-console.log("hello webpack"),console.log("hello");
+(()=>{function e(){}!function(){for(let n=0;n<6;n++){let n=document.createElement("div");n.className="row";for(let t=0;t<6;t++){let t=document.createElement("div");t.className="box",n.appendChild(t),t.addEventListener("click",e)}document.getElementById("grid-container").appendChild(n);var t=document.getElementsByClassName("box");for(let e=0;e<t.length;e++)t[e].style.width="100px",t[e].style.height="100px"}}()})();
