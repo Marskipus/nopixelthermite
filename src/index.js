@@ -7,7 +7,8 @@ function makeBlocks() {
 
         for (let j = 0; j < size; j++) {
             let box = document.createElement('div');
-            box.className = "box";
+            box.className = `box-${i}${j}`
+            box.classList.add('box')
             row.appendChild(box);
             box.addEventListener('click',selectBox)
         }
