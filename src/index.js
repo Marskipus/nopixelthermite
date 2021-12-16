@@ -2,6 +2,7 @@ let size = 6
 let maxWidth = 600
 let allBoxes = []
 let unchangedAllBoxes = []
+
 function makeBlocks() {
 
     for (let i = 0; i < size; i++) {
@@ -13,8 +14,9 @@ function makeBlocks() {
             box.className = `box-${i}${j}`
             box.classList.add('box')
             allBoxes.push(`box-${i}${j}`)
+            unchangedAllBoxes.push(`box-${i}${j}`)
             row.appendChild(box);
-            box.addEventListener('click',selectBox)
+            box.addEventListener('click', selectBox)
         }
         document.getElementById('grid-container').appendChild(row);
 
@@ -27,23 +29,24 @@ function makeBlocks() {
     return [allBoxes]
 }
 
-//since boxes are removed from allBoxes if they are selected, i need an unchanged array to add the event listeners
-unchangedAllBoxes = allBoxes
 
 makeBlocks()
-function selectBox(){
+
+function selectBox() {
 
 }
-function random(num){
-    return Math.floor(Math.random()*num)
+
+function random(num) {
+    return Math.floor(Math.random() * num)
 }
 let selectedBoxes = []
-function selectBoxes(difficulty){
 
-    for(let i = 0; i < difficulty; i++){
+function selectBoxes(difficulty) {
+
+    for (let i = 0; i < difficulty; i++) {
         selectedBoxes.push(allBoxes[random(allBoxes.length)])
         document.querySelector(`.${selectedBoxes[i]}`).classList.add('selected')
-        allBoxes.splice(i,1)
+        allBoxes.splice(i, 1)
     }
     return selectedBoxes
 }
@@ -51,7 +54,7 @@ selectBoxes(10)
 
 function classes() {
     console.log(unchangedAllBoxes)
-    for(let i = 0; i < unchangedAllBoxes.length; i++) {
+    for (let i = 0; i < unchangedAllBoxes.length; i++) {
         document.querySelector(`.${unchangedAllBoxes[i]}`).addEventListener('click', () => {
             if (document.querySelector(`.${unchangedAllBoxes[i]}`).classList.contains('selected')) {
                 console.log('this was selected')
@@ -62,7 +65,3 @@ function classes() {
     }
 }
 classes()
-
-
-
-
