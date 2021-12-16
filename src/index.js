@@ -2,6 +2,21 @@ let size = 6
 let maxWidth = 600
 let allBoxes = []
 let unchangedAllBoxes = []
+const startBtn = document.querySelector('[data-start-button]')
+const gridContainer = document.querySelector('[data-grid-container]')
+startBtn.addEventListener('click', playRound)
+
+function playRound() {
+    //reset everything and then generate a board
+    allBoxes = []
+    unchangedAllBoxes = []
+    selectedBoxes = []
+    gridContainer.textContent = ""
+    makeBlocks()
+    selectBoxes(10)
+    classes()
+}
+
 
 function makeBlocks() {
 
@@ -30,7 +45,7 @@ function makeBlocks() {
 }
 
 
-makeBlocks()
+//makeBlocks()
 
 function selectBox() {
 
@@ -50,10 +65,10 @@ function selectBoxes(difficulty) {
     }
     return selectedBoxes
 }
-selectBoxes(10)
+//selectBoxes(10)
 
 function classes() {
-    console.log(unchangedAllBoxes)
+    console.log(selectedBoxes)
     for (let i = 0; i < unchangedAllBoxes.length; i++) {
         document.querySelector(`.${unchangedAllBoxes[i]}`).addEventListener('click', () => {
             if (document.querySelector(`.${unchangedAllBoxes[i]}`).classList.contains('selected')) {
@@ -64,4 +79,3 @@ function classes() {
         })
     }
 }
-classes()
