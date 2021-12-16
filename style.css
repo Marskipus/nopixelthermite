@@ -17,3 +17,12 @@
 .hidden {
     display: none;
 }
+.correct {
+
+}
+.selected1 {
+    background-color: gray;
+}
+.wrongchoice {
+    background-color: aqua;
+}
