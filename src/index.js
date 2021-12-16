@@ -44,9 +44,6 @@ function makeBlocks() {
     return [allBoxes]
 }
 
-
-//makeBlocks()
-
 function selectBox() {
 
 }
@@ -65,17 +62,27 @@ function selectBoxes(difficulty) {
     }
     return selectedBoxes
 }
-//selectBoxes(10)
 
 function classes() {
     console.log(selectedBoxes)
     for (let i = 0; i < unchangedAllBoxes.length; i++) {
+        let thebox = document.querySelector(`.${unchangedAllBoxes[i]}`)
         document.querySelector(`.${unchangedAllBoxes[i]}`).addEventListener('click', () => {
-            if (document.querySelector(`.${unchangedAllBoxes[i]}`).classList.contains('selected')) {
-                console.log('this was selected')
+            
+            if (thebox.classList.contains('selected')) {
+            console.log('this was selected')
+            choose(thebox)
             } else {
                 console.log('this was not selected')
+                wrongChoice(thebox)
             }
         })
     }
+}
+function choose(el) {
+    el.classList.add("selected1");
+
+}
+function wrongChoice(el){
+    el.classList.add('wrongchoice')
 }
