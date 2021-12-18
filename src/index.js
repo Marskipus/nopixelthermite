@@ -22,7 +22,6 @@ function test() {
         makeBlocks()
         selectBoxes(10)
         classes()
-        //check()
     }
 
     function makeBlocks() {
@@ -145,3 +144,6 @@ function sleep (time) {
   }
 
 test()
+//todo: add start and end screens (maybe they are the same or super similar?)
+//options to customize difficulty on start screen:
+  //7x7, 15 boxes highlighted
