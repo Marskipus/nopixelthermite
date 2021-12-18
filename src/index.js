@@ -78,6 +78,7 @@ function test() {
     uniqueArray = [...new Set(selectedBoxes)]
 
     function classes() {
+        let score = 3
         log(unchangedAllBoxes)
         for (let i = 0; i < unchangedAllBoxes.length; i++) {
             let thebox = document.querySelector(`.${unchangedAllBoxes[i]}`)
@@ -89,8 +90,12 @@ function test() {
                 } else if (thebox.classList.contains('selected1')) {
                     console.log('this was already selected')
                 } else {
+                    score -= 1
                     console.log('this was not selected')
                     wrongChoice(thebox)
+                    if (score <= 0) {
+                        alert('you failed')
+                    }
                 }
             })
         }
