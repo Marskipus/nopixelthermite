@@ -22,7 +22,7 @@ function test() {
         makeBlocks()
         selectBoxes(10)
         classes()
-        check()
+        //check()
     }
 
     function makeBlocks() {
@@ -99,7 +99,15 @@ function test() {
                     wrongChoice(thebox)
                     if (score <= 0) {
                         sleep(500).then(() => {
-                            alert('you failed')
+                            alert('you lose')
+                            //shows the boxes you missed after you lose
+                            for (let i = 0; i < unchangedAllBoxes.length; i++) {
+                                if (document.querySelector(`.${unchangedAllBoxes[i]}`).classList.contains('selected')) {
+                                    document.querySelector(`.${unchangedAllBoxes[i]}`).classList.add('red')
+                                    console.log('redboi')
+                                }
+                            }
+
                         })
                         //make start screen show up here
                     }
