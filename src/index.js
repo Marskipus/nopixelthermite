@@ -66,9 +66,13 @@ function test() {
 
         for (let i = 0; i < difficulty; i++) {
             selectedBoxes.push(allBoxes[random(allBoxes.length)])
-
-            document.querySelector(`.${selectedBoxes[i]}`).classList.add('selected')
-            allBoxes.splice(i, 1)
+            document.querySelector(`.${selectedBoxes[i]}`).classList.add('red')
+            sleep(1000).then(() => {
+                document.querySelector(`.${selectedBoxes[i]}`).classList.remove('red')
+                document.querySelector(`.${selectedBoxes[i]}`).classList.add('selected')
+                allBoxes.splice(i, 1)
+            })
+            
 
         }
         return selectedBoxes
@@ -94,7 +98,10 @@ function test() {
                     console.log('this was not selected')
                     wrongChoice(thebox)
                     if (score <= 0) {
-                        alert('you failed')
+                        sleep(500).then(() => {
+                            alert('you failed')
+                        })
+                        //make start screen show up here
                     }
                 }
             })
@@ -125,5 +132,8 @@ function test() {
     }
     
 }
+function sleep (time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+  }
 
 test()

@@ -12,7 +12,7 @@
     padding-bottom: 10%;
 }
 .selected {
-    background-color: red;
+    
 }
 .hidden {
     display: none;
@@ -25,4 +25,7 @@
 }
 .wrongchoice {
     background-color: aqua;
+}
+.red {
+    background-color: red;
 }
