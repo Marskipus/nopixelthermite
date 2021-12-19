@@ -14,6 +14,11 @@ document.querySelector('[data-win-play-again]').addEventListener('click', () => 
 startBtn.addEventListener('click', playRound)
 endMenu.style.display = 'none'
 
+
+
+
+
+let allBoxes = []
 let unchangedAllBoxes = []
 let selectedBoxes = []
 
@@ -64,7 +69,7 @@ function random(num) {
 }
 
 
-function selectBoxes(difficulty,allBoxes) {
+function selectBoxes(difficulty) {
 
     for (let i = 0; i < difficulty; i++) {
         selectedBoxes.push(allBoxes[random(allBoxes.length)])
@@ -149,6 +154,7 @@ function sleep(time) {
 }
 
 
-//todo:
+//todo: add start and end screens (maybe they are the same or super similar?)
 //options to customize difficulty on start screen:
 //7x7, 15 boxes highlighted
+//the wrong boxes are being highlighted when you lose
