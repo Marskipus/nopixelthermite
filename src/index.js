@@ -14,11 +14,6 @@ document.querySelector('[data-win-play-again]').addEventListener('click', () => 
 startBtn.addEventListener('click', playRound)
 endMenu.style.display = 'none'
 
-
-
-
-
-
 let unchangedAllBoxes = []
 let selectedBoxes = []
 
@@ -154,7 +149,6 @@ function sleep(time) {
 }
 
 
-//todo: add start and end screens (maybe they are the same or super similar?)
+//todo:
 //options to customize difficulty on start screen:
 //7x7, 15 boxes highlighted
-//the wrong boxes are being highlighted when you lose
