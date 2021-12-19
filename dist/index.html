@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+
     <div id="startmenu">
         <h1>Welcome</h1>
         <button id="start" data-start-button>Start</button>
@@ -19,6 +20,28 @@
     <div id="grid-container-container">
         <div id="grid-container" data-grid-container></div>
     </div>
+    <div class="endmenu" data-end-menu>
+        <div>
+            
+        </div>
+        <h2>Play again?</h2>
+        <div id = "endsettingsmenu">
+            <h4>hello</h4>
+            <input class="changedifficulty" name="difficulty">
+            <button class="settingbutton">Update Settings</button>
+            <button class="settingbutton" data-end-play-again>Play Again</button>
+        </div>
 
+    </div>
+    <div class = "winmenu" data-win-menu>
+        <div id="winsettingsmenu">
+            <h4>You win!</h4>
+            <label for="changedifficulty">Change Difficulty</label>
+            <input class="changedifficulty" name="changedifficulty">
+            <button class="settingbutton" name="changedifficulty">Update Settings</button>
+            <button class="settingbutton" data-win-play-again>Play again</button>
+        </div>
+
+    </div>
 </body>
 </html>
