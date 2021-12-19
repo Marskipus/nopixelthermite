@@ -7,6 +7,7 @@ const decreaseGridSizeButton = document.querySelector('[data-decrease-grid-size]
 const decreaseDifficultyButton = document.querySelector('[data-decrease-difficulty-button]')
 const increaseDifficultyButton = document.querySelector('[data-increase-difficulty-button]')
 const increaseGridSizeButton = document.querySelector('[data-increase-grid-size]')
+const difficultyDisplay = document.querySelector('[data-difficulty]')
 document.querySelector('[data-end-play-again]').addEventListener('click', () => {
     endMenu.style.display = 'none'
 
@@ -33,7 +34,10 @@ let maxWidth = 300
 let allBoxes = []
 let unchangedAllBoxes = []
 let selectedBoxes = []
-
+let difficulty = 5
+function displayDifficulty(){
+    return difficultyDisplay.textContent = `Difficulty: ${difficulty}`
+}
 function changeGridSize(increment) {
     return maxWidth += increment
 }
@@ -41,7 +45,6 @@ function changeGridSize(increment) {
 function playRound() {
     unchangedAllBoxes = []
     selectedBoxes = []
-    // uniqueArray = []
     gridContainer.textContent = ""
     makeBlocks(gridSize)
     selectBoxes(5)
@@ -49,7 +52,7 @@ function playRound() {
 }
 
 function makeBlocks(size) {
-
+    displayDifficulty()
     for (let i = 0; i < size; i++) {
         let row = document.createElement('div');
         row.className = "row";
@@ -76,7 +79,6 @@ function makeBlocks(size) {
 function random(num) {
     return Math.floor(Math.random() * num)
 }
-
 
 function selectBoxes(difficulty) {
 
@@ -120,7 +122,6 @@ function classes() {
                                 document.querySelector(`.${unchangedAllBoxes[i]}`).classList.add('red')
                             }
                         }
-
                     })
                     //make start screen show up here
                 }
@@ -138,7 +139,6 @@ function wrongChoice(el) {
     el.classList.add('wrongchoice')
 }
 
-
 function check() {
     //checks the classes on all boxes, returns if one still has the selected class. and announces winner if it can finish the loop
     for (let i = 0; i < unchangedAllBoxes.length; i++) {
@@ -146,9 +146,7 @@ function check() {
             return false
         }
     }
-    console.log('winner')
     winMenu.style.display = "flex"
-    //display end page here with slightly opaque screen that pops up and give you the option to customize settings and play again or exit
     //localstorage to keep track of completions?
 }
 
@@ -157,6 +155,3 @@ function sleep(time) {
 }
 
 makeBlocks(6)
-//todo: add start and end screens (maybe they are the same or super similar?)
-//options to customize difficulty on start screen:
-//7x7, 15 boxes highlighted
