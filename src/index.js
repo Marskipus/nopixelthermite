@@ -17,26 +17,26 @@ endMenu.style.display = 'none'
 
 
 
-
+let size = 6
+let maxWidth = 600
 let allBoxes = []
 let unchangedAllBoxes = []
 let selectedBoxes = []
-
+//let allBoxes = []
 function playRound() {
-    let size = 6
-    let maxWidth = 600
+
     //reset everything and then generate a board
-    let allBoxes = []
+
     unchangedAllBoxes = []
     selectedBoxes = []
     // uniqueArray = []
     gridContainer.textContent = ""
-    makeBlocks(size,maxWidth,allBoxes)
+    makeBlocks()
     selectBoxes(5)
     classes()
 }
 
-function makeBlocks(size,maxWidth,allBoxes) {
+function makeBlocks() {
 
     for (let i = 0; i < size; i++) {
         let row = document.createElement('div');
