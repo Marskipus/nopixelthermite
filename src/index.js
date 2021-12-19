@@ -3,8 +3,10 @@ const endMenu = document.querySelector('[data-end-menu]')
 const log = console.log
 const startBtn = document.querySelector('[data-start-button]')
 const gridContainer = document.querySelector('[data-grid-container]')
-const increaseGridSizeButton = document.querySelector('[data-increase-grid-size]')
 const decreaseGridSizeButton = document.querySelector('[data-decrease-grid-size]')
+const decreaseDifficultyButton = document.querySelector('[data-decrease-difficulty-button]')
+const increaseDifficultyButton = document.querySelector('[data-increase-difficulty-button]')
+const increaseGridSizeButton = document.querySelector('[data-increase-grid-size]')
 document.querySelector('[data-end-play-again]').addEventListener('click', () => {
     endMenu.style.display = 'none'
 
@@ -26,27 +28,22 @@ decreaseGridSizeButton.addEventListener('click', () => {
 startBtn.addEventListener('click', playRound)
 endMenu.style.display = 'none'
 
-
-
-
-
+let gridSize = 6
 let maxWidth = 300
 let allBoxes = []
 let unchangedAllBoxes = []
 let selectedBoxes = []
-//let allBoxes = []
-function changeGridSize(increment){
+
+function changeGridSize(increment) {
     return maxWidth += increment
 }
+
 function playRound() {
-
-    //reset everything and then generate a board
-
     unchangedAllBoxes = []
     selectedBoxes = []
     // uniqueArray = []
     gridContainer.textContent = ""
-    makeBlocks(6)
+    makeBlocks(gridSize)
     selectBoxes(5)
     classes()
 }
@@ -73,11 +70,8 @@ function makeBlocks(size) {
             boxes[k].style.height = maxWidth / size + "px";
         }
     }
-    //console.log(allBoxes)
     return allBoxes
 }
-//allBoxes = makeBlocks()
-
 
 function random(num) {
     return Math.floor(Math.random() * num)
