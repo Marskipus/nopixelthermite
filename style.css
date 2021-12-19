@@ -1,5 +1,7 @@
 .box {
     border: 2px solid black;
+    background-color: white;
+    
 }
 .row {
     display: flex;
@@ -48,7 +50,7 @@
 }
 .settingbutton {
     padding: 20px;
-    width: 30%;
+    width: 150px;
     border-radius: 50px;
     cursor: pointer;
 }
@@ -67,7 +69,7 @@
     flex-direction: column;
 }
 #winsettingsmenu {
-    background-color: #69cccc69;
+    background-color: #69cccc79;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,6 +79,7 @@
     
 }
 #startmenu {
+    background-color: #7fffd490;
     display: flex;
     position: fixed;
     top: 0;
@@ -89,7 +92,7 @@
     color: blue;
     font-size: 30px;
     flex-direction: column;
-    border: 5px solid red;
+    border: 5px solid #696969;
     margin: 1vw;
     padding: 20%;
 }
