@@ -1,14 +1,16 @@
 html {
     box-sizing: border-box;
 }
+
 .box {
     border: 2px solid black;
     background-color: white;
-    
 }
+
 .row {
     display: flex;
 }
+
 #grid-container-container {
     display: flex;
     justify-content: center;
@@ -16,18 +18,23 @@ html {
     padding-top: 5%;
     padding-bottom: 10%;
 }
+
 .hidden {
     display: none;
 }
+
 .selected1 {
     background-color: gray;
 }
+
 .wrongchoice {
     background-color: aqua;
 }
+
 .red {
     background-color: red;
 }
+
 .endmenu {
     display: flex;
     position: fixed;
@@ -42,8 +49,8 @@ html {
     font-size: 30px;
     flex-direction: column;
 }
-#endsettingsmenu {
 
+#endsettingsmenu {
     background-color: #7fffd490;
     display: flex;
     flex-direction: column;
@@ -51,6 +58,7 @@ html {
     width: 50%;
     padding: 10%;
 }
+
 .settingbutton {
     margin: 5px;
     display: flex;
@@ -63,16 +71,18 @@ html {
     cursor: pointer;
     color: #fff;
     background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
-     background-origin: border-box;
+    background-origin: border-box;
     box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
     user-select: none;
     -webkit-user-select: none;
-    touch-action: manipulation; 
+    touch-action: manipulation;
 }
+
 .settingbutton:focus {
     box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
     outline: 0;
-  }
+}
+
 .winmenu {
     display: none;
     position: fixed;
@@ -87,6 +97,7 @@ html {
     font-size: 30px;
     flex-direction: column;
 }
+
 #winsettingsmenu {
     background-color: #69cccc79;
     display: flex;
@@ -95,8 +106,8 @@ html {
     width: 50%;
     padding: 10%;
     color: black;
-    
 }
+
 #startmenu {
     background-color: #7fffd490;
     display: flex;
