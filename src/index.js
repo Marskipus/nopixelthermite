@@ -3,6 +3,8 @@ const endMenu = document.querySelector('[data-end-menu]')
 const log = console.log
 const startBtn = document.querySelector('[data-start-button]')
 const gridContainer = document.querySelector('[data-grid-container]')
+const increaseGridSizeButton = document.querySelector('[data-increase-grid-size]')
+const decreaseGridSizeButton = document.querySelector('[data-decrease-grid-size]')
 document.querySelector('[data-end-play-again]').addEventListener('click', () => {
     endMenu.style.display = 'none'
 
@@ -11,6 +13,16 @@ document.querySelector('[data-win-play-again]').addEventListener('click', () => 
     winMenu.style.display = 'none'
 
 })
+increaseGridSizeButton.addEventListener('click', () => {
+    changeGridSize(50)
+    gridContainer.textContent = ""
+    makeBlocks(6)
+})
+decreaseGridSizeButton.addEventListener('click', () => {
+    changeGridSize(-50)
+    gridContainer.textContent = ""
+    makeBlocks(6)
+})
 startBtn.addEventListener('click', playRound)
 endMenu.style.display = 'none'
 
@@ -18,11 +30,14 @@ endMenu.style.display = 'none'
 
 
 
-let maxWidth = 600
+let maxWidth = 300
 let allBoxes = []
 let unchangedAllBoxes = []
 let selectedBoxes = []
 //let allBoxes = []
+function changeGridSize(increment){
+    return maxWidth += increment
+}
 function playRound() {
 
     //reset everything and then generate a board
@@ -95,14 +110,12 @@ function classes() {
         let thebox = document.querySelector(`.${unchangedAllBoxes[i]}`)
         document.querySelector(`.${unchangedAllBoxes[i]}`).addEventListener('click', () => {
             if (thebox.classList.contains('selected')) {
-                console.log('this was selected')
                 choose(thebox)
                 check()
             } else if (thebox.classList.contains('selected1')) {
-                console.log('this was already selected')
+                //if it was already selected
             } else {
                 score -= 1
-                console.log('this was not selected')
                 wrongChoice(thebox)
                 if (score <= 0) {
                     sleep(500).then(() => {
@@ -111,7 +124,6 @@ function classes() {
                         for (let i = 0; i < unchangedAllBoxes.length; i++) {
                             if (document.querySelector(`.${unchangedAllBoxes[i]}`).classList.contains('selected')) {
                                 document.querySelector(`.${unchangedAllBoxes[i]}`).classList.add('red')
-                                console.log('redboi')
                             }
                         }
 
@@ -121,9 +133,6 @@ function classes() {
             }
         })
     }
-
-
-    //return uniqueArray
 }
 
 function choose(el) {
