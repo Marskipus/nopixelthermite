@@ -15,9 +15,9 @@ startBtn.addEventListener('click', playRound)
 endMenu.style.display = 'none'
 
 
-//branch2
 
-let size = 6
+
+
 let maxWidth = 600
 let allBoxes = []
 let unchangedAllBoxes = []
@@ -31,12 +31,12 @@ function playRound() {
     selectedBoxes = []
     // uniqueArray = []
     gridContainer.textContent = ""
-    makeBlocks()
+    makeBlocks(6)
     selectBoxes(5)
     classes()
 }
 
-function makeBlocks() {
+function makeBlocks(size) {
 
     for (let i = 0; i < size; i++) {
         let row = document.createElement('div');
@@ -153,7 +153,7 @@ function sleep(time) {
     return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-
+makeBlocks()
 //todo: add start and end screens (maybe they are the same or super similar?)
 //options to customize difficulty on start screen:
 //7x7, 15 boxes highlighted
