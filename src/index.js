@@ -4,8 +4,8 @@ const log = console.log
 const startBtn = document.querySelector('[data-start-button]')
 const gridContainer = document.querySelector('[data-grid-container]')
 const decreaseGridSizeButton = document.querySelector('[data-decrease-grid-size]')
-const decreaseDifficultyButton = document.querySelector('[data-decrease-difficulty-button]')
-const increaseDifficultyButton = document.querySelector('[data-increase-difficulty-button]')
+const decreaseDifficultyButton = document.querySelector('[data-decrease-grid-difficulty]')
+const increaseDifficultyButton = document.querySelector('[data-increase-grid-difficulty]')
 const increaseGridSizeButton = document.querySelector('[data-increase-grid-size]')
 const difficultyDisplay = document.querySelector('[data-difficulty]')
 document.querySelector('[data-end-play-again]').addEventListener('click', () => {
@@ -26,6 +26,14 @@ decreaseGridSizeButton.addEventListener('click', () => {
     gridContainer.textContent = ""
     makeBlocks(6)
 })
+decreaseDifficultyButton.addEventListener('click', () => {
+    changeDifficulty(-1)
+    displayDifficulty()
+})
+increaseDifficultyButton.addEventListener('click', () => {
+    changeDifficulty(1)
+    displayDifficulty()
+})
 startBtn.addEventListener('click', playRound)
 endMenu.style.display = 'none'
 
@@ -41,13 +49,15 @@ function displayDifficulty(){
 function changeGridSize(increment) {
     return maxWidth += increment
 }
-
+function changeDifficulty(increment) {
+    return difficulty += increment
+}
 function playRound() {
     unchangedAllBoxes = []
     selectedBoxes = []
     gridContainer.textContent = ""
     makeBlocks(gridSize)
-    selectBoxes(5)
+    selectBoxes(difficulty)
     classes()
 }
 
