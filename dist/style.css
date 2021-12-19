@@ -49,8 +49,8 @@
 .settingbutton {
     padding: 20px;
     width: 30%;
-    margin: 3%;
     border-radius: 50px;
+    cursor: pointer;
 }
 .winmenu {
     display: none;
@@ -77,5 +77,19 @@
     
 }
 #startmenu {
-    
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: rgba(55, 21, 64, .55); */
+    justify-content: center;
+    align-items: center;
+    color: blue;
+    font-size: 30px;
+    flex-direction: column;
+    border: 5px solid red;
+    margin: 1vw;
+    padding: 20%;
 }
