@@ -29,7 +29,7 @@ endMenu.style.display = 'none'
 
 
 
-
+let gridSize = 6
 let maxWidth = 300
 let allBoxes = []
 let unchangedAllBoxes = []
@@ -46,7 +46,7 @@ function playRound() {
     selectedBoxes = []
     // uniqueArray = []
     gridContainer.textContent = ""
-    makeBlocks(6)
+    makeBlocks(gridSize)
     selectBoxes(5)
     classes()
 }
