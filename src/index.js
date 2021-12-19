@@ -15,7 +15,7 @@ startBtn.addEventListener('click', playRound)
 endMenu.style.display = 'none'
 
 
-//branch2
+
 
 let size = 6
 let maxWidth = 600
