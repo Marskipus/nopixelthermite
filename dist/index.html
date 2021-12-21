@@ -13,13 +13,20 @@
 <body>
 
     <div id="startmenu">
-        <h5 data-difficulty>Difficulty: </h5>
+        <h5 data-difficulty class="gamestats">Difficulty: </h5>
+        <h5 data-time clas="gamestats">Time: </h5>
         <button class="settingbutton" id="start" data-start-button>Start</button>
+        <button class="settingbutton" data-increase-grid-size>Increase grid size</button>
+        <button class="settingbutton" data-decrease-grid-size>Decrease grid size</button>
+        <button class="settingbutton" data-increase-grid-difficulty>Increase Difficulty</button>
+        <button class="settingbutton" data-decrease-grid-difficulty>Decrease Difficulty</button>
+        <form class="updateform">
+            <input placeholder ="69ms" type="number" data-time-input>
+            <button class="settingbutton" data-update-time>Update time</button>
+        </form>
         <div>
-            <button class="settingbutton" data-increase-grid-size>Increase grid size</button>
-            <button class="settingbutton" data-decrease-grid-size>Decrease grid size</button>
-            <button class="settingbutton" data-increase-grid-difficulty>Increase Difficulty</button>
-            <button class="settingbutton" data-decrease-grid-difficulty>Decrease Difficulty</button>
+
+
         </div>
 
         <div id="grid-container-container">

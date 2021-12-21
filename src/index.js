@@ -8,6 +8,8 @@ const decreaseDifficultyButton = document.querySelector('[data-decrease-grid-dif
 const increaseDifficultyButton = document.querySelector('[data-increase-grid-difficulty]')
 const increaseGridSizeButton = document.querySelector('[data-increase-grid-size]')
 const difficultyDisplay = document.querySelector('[data-difficulty]')
+const updateTimeBtn = document.querySelector('[data-update-time]')
+const timeDisplay = document.querySelector('[data-time]')
 document.querySelector('[data-end-play-again]').addEventListener('click', () => {
     endMenu.style.display = 'none'
 
@@ -36,13 +38,25 @@ increaseDifficultyButton.addEventListener('click', () => {
 })
 startBtn.addEventListener('click', playRound)
 endMenu.style.display = 'none'
-
+updateTimeBtn.addEventListener('click', e => {
+    e.preventDefault()
+    changeTime()
+    displayTime()
+    document.querySelector('[data-time-input]').value = ""
+})
 let gridSize = 6
 let maxWidth = 300
 let allBoxes = []
 let unchangedAllBoxes = []
 let selectedBoxes = []
 let difficulty = 5
+let time = 1000
+function displayTime(){
+    timeDisplay.textContent = `Time: ${time}ms`
+}
+function changeTime() {
+    return time = document.querySelector('[data-time-input]').value
+}
 function displayDifficulty(){
     return difficultyDisplay.textContent = `Difficulty: ${difficulty}`
 }
@@ -57,8 +71,9 @@ function playRound() {
     selectedBoxes = []
     gridContainer.textContent = ""
     makeBlocks(gridSize)
-    selectBoxes(difficulty)
+    selectBoxes(difficulty,time)
     classes()
+    displayTime()
 }
 
 function makeBlocks(size) {
@@ -90,12 +105,12 @@ function random(num) {
     return Math.floor(Math.random() * num)
 }
 
-function selectBoxes(difficulty) {
+function selectBoxes(difficulty,time) {
 
     for (let i = 0; i < difficulty; i++) {
         selectedBoxes.push(allBoxes[random(allBoxes.length)])
         document.querySelector(`.${selectedBoxes[i]}`).classList.add('red')
-        sleep(1000).then(() => {
+        sleep(time).then(() => {
             document.querySelector(`.${selectedBoxes[i]}`).classList.remove('red')
             document.querySelector(`.${selectedBoxes[i]}`).classList.add('selected')
             allBoxes.splice(i, 1)
@@ -165,3 +180,4 @@ function sleep(time) {
 }
 
 makeBlocks(6)
+displayTime()

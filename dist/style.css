@@ -126,3 +126,11 @@ html {
     margin: 1vw;
     padding: 20%;
 }
+.updateform {
+    display: flex;
+}
+.gamestats {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    line-height: 0;
+}
