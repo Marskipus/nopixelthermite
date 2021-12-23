@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    background-color: #7fffd490;
 }
 
 .box {
@@ -109,7 +110,6 @@ html {
 }
 
 #startmenu {
-    background-color: #7fffd490;
     display: flex;
     position: fixed;
     top: 0;
@@ -133,4 +133,19 @@ html {
     margin-bottom: 0px;
     margin-top: 0px;
     line-height: 0;
+}
+.hover:hover{
+    color: red;
+}
+.how_to_play {
+    font-size: 18px;
+    position: absolute;
+    margin-bottom: 75px;
+    background-color: #2cc75f;
+    border-radius: 10px;
+    display: none;
+    padding: 10px;
+}
+.gridsizebtns {
+    display: flex;
 }

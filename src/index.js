@@ -10,6 +10,17 @@ const increaseGridSizeButton = document.querySelector('[data-increase-grid-size]
 const difficultyDisplay = document.querySelector('[data-difficulty]')
 const updateTimeBtn = document.querySelector('[data-update-time]')
 const timeDisplay = document.querySelector('[data-time]')
+const howToPlay = document.querySelector('[data-how-to-play]')
+const instructions = document.querySelector('.how_to_play')
+howToPlay.addEventListener('click', () => {
+    if (instructions.style.display === 'none' || instructions.style.display == "") {
+        instructions.style.display = 'block'
+        howToPlay.textContent = "Hide instructions"
+    } else {
+        instructions.style.display = 'none'
+        howToPlay.textContent = "How to play"
+    }  
+})
 document.querySelector('[data-end-play-again]').addEventListener('click', () => {
     endMenu.style.display = 'none'
 

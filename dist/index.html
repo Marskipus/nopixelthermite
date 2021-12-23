@@ -11,14 +11,24 @@
 </head>
 
 <body>
+    
     <div id="startmenu">
+
         <h5 data-difficulty class="gamestats">Difficulty: </h5>
+        <p class="how_to_play" data-instructions>How to play: click start, memorize the red boxes, then click on all of the boxes that were red.</p>
         <h5 data-time clas="gamestats">Time: </h5>
+        
         <button class="settingbutton" id="start" data-start-button>Start</button>
-        <button class="settingbutton" data-increase-grid-size>Increase grid size</button>
-        <button class="settingbutton" data-decrease-grid-size>Decrease grid size</button>
-        <button class="settingbutton" data-increase-grid-difficulty>Increase Difficulty</button>
-        <button class="settingbutton" data-decrease-grid-difficulty>Decrease Difficulty</button>
+        <button class="settingbutton" data-how-to-play>How to play</button>
+        <div class="gridsizebtns">
+            <button class="settingbutton" data-increase-grid-size>Increase grid size</button>
+            <button class="settingbutton" data-decrease-grid-size>Decrease grid size</button>
+        </div>
+        <div class="gridsizebtns">
+            <button class="settingbutton" data-increase-grid-difficulty>Increase Difficulty</button>
+            <button class="settingbutton" data-decrease-grid-difficulty>Decrease Difficulty</button>
+        </div>
+
         <form class="updateform">
             <input placeholder="ms" type="number" data-time-input>
             <button class="settingbutton" data-update-time>Update time</button>
